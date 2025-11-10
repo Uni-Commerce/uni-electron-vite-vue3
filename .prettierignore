@@ -1,0 +1,6 @@
+*.yaml
+*.md
+*.html
+*.json5
+dist
+node_modules
