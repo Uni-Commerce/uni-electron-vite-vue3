@@ -44,7 +44,6 @@ const createWindow = () => {
     win?.webContents.send('main-process-message', new Date().toLocaleString())
   })
 
-  console.info('VITE_DEV_SERVER_URL:', VITE_DEV_SERVER_URL)
   if (VITE_DEV_SERVER_URL) {
     win.loadURL(VITE_DEV_SERVER_URL)
   } else {
