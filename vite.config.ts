@@ -6,7 +6,7 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 
-import { moveHtmlPlugin } from './src/plugins'
+import { moveHtmlPlugin, replaceAssetsPlugin } from './src/plugins'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -78,6 +78,7 @@ export default defineConfig(({ mode }) => {
         entry: `/src/${blockName}/main.ts`,
         template: `/src/${blockName}/index.html`
       }),
+      replaceAssetsPlugin(),
       moveHtmlPlugin(),
       ...plugins
     ]
