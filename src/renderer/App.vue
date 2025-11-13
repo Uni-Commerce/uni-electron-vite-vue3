@@ -1,30 +1,35 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://electron-vite.github.io" target="_blank">
-      <img src="/electron-vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="relative h-screen w-screen overflow-hidden bg-primary">
+    <router-view />
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <app-global-tools />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script lang="ts" setup>
+import { storeToRefs } from 'pinia'
+import { useDark, useToggle } from '@vueuse/core'
+import { useAppStore } from '@/renderer/stores'
+
+const appStore = useAppStore()
+const isDark = useDark({
+  selector: 'html',
+  attribute: 'class',
+  valueDark: 'dark',
+  valueLight: 'light'
+})
+const { theme } = storeToRefs(appStore)
+const toggleTheme = useToggle(isDark)
+
+onBeforeMount(() => {
+  appStore.setTheme(isDark.value ? 'dark' : 'light')
+})
+
+// 监听 theme 变化，自动切换主题
+watchEffect(() => {
+  if (isDark.value) {
+    if (theme.value === 'light') toggleTheme()
+  } else {
+    if (theme.value === 'dark') toggleTheme()
+  }
+})
+</script>
