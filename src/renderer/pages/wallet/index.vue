@@ -11,26 +11,32 @@
       <p class="text-xs text-font">{{ t('waller.message') }}</p>
     </div>
     <div class="grid grid-cols-2 items-center justify-center gap-x-[48px]">
-      <div class="bg-block flex h-[335px] items-center justify-center rounded-2xl">
+      <div
+        class="flex h-[335px] cursor-pointer items-center justify-center rounded-2xl bg-block"
+        @click="handleToCreate"
+      >
         <div class="text-center">
           <span class="inline-block">
             <i class="iconfont icon_wallet text-[68px] text-white" />
           </span>
           <h5 class="font-SFPro-Bold text-xl leading-[26px] text-white">
-            <span>Create Wallet</span>
+            <span>{{ t('wallet.create') }}</span>
           </h5>
-          <p class="text-block mt-2 text-sm">Create a new wallet</p>
+          <p class="mt-2 text-sm text-block">{{ t('wallet.createMsg') }}</p>
         </div>
       </div>
-      <div class="flex h-[335px] items-center justify-center rounded-2xl bg-primary">
+      <div
+        class="flex h-[335px] cursor-pointer items-center justify-center rounded-2xl bg-primary"
+        @click="handleToImport"
+      >
         <div class="text-center">
           <span class="inline-block">
             <i class="iconfont icon_a-ImportWallet text-[68px] text-primary" />
           </span>
           <h5 class="font-SFPro-Bold text-xl leading-[26px] text-primary">
-            <span>Import Wallet</span>
+            <span>{{ t('wallet.import') }}</span>
           </h5>
-          <p class="mt-2 text-sm text-font">Recover an exisiting wallet</p>
+          <p class="mt-2 text-sm text-font">{{ t('wallet.importMsg') }}</p>
         </div>
       </div>
     </div>
@@ -39,4 +45,13 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
+const router = useRouter()
+
+const handleToCreate = () => {
+  router.push('/wallet/create')
+}
+
+const handleToImport = () => {
+  router.push('/wallet/import')
+}
 </script>
