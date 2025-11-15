@@ -7,7 +7,7 @@
       <i class="iconfont icon_back text-[22px] text-primary" />
       <span class="text-xs text-primary">{{ t('gloabl.back') }}</span>
     </p>
-    <div class="w-[518px]">
+    <div class="flex h-full w-[518px] flex-col">
       <slot name="default" />
     </div>
   </div>

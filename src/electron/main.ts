@@ -30,6 +30,11 @@ const createWindow = () => {
   win = new BrowserWindow({
     width: 1024,
     height: 686,
+    minWidth: 1024,
+    maxWidth: 1024,
+    minHeight: 686,
+    maxHeight: 686,
+    resizable: false,
     autoHideMenuBar: true,
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {

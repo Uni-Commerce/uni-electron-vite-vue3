@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-screen relative h-[686px] max-h-[686px] w-[1024px] max-w-[1024px] overflow-hidden">
+  <div class="relative h-[686px] max-h-[686px] w-[1024px] max-w-[1024px] overflow-hidden bg-screen">
     <router-view />
     <app-global-tools />
   </div>

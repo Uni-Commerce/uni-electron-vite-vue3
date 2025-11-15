@@ -3,3 +3,9 @@ body {
   font-family: var(--font-family-SFPro-Regular);
   font-size: 14px;
 }
+
+html,
+body {
+  padding: 0;
+  overflow: hidden; /* 防止body出现滚动条 */
+}
