@@ -15,21 +15,21 @@ const router = createRouter({
           component: () => import('@/renderer/pages/home/index.vue')
         }
       ]
-    }
-    // { path: '/backup', component: () => import('@/renderer/pages/backup/index.vue') },
-    // { path: '/wallet', component: () => import('@/renderer/pages/wallet/index.vue') }
+    },
+    { path: '/backup', component: () => import('@/renderer/pages/backup/index.vue') },
+    { path: '/wallet', component: () => import('@/renderer/pages/wallet/index.vue') }
   ]
 })
 
 router.beforeEach(async (to) => {
   const { hasWallet } = useUserStore()
 
-  // if (to.path === '/wallet') return true
+  if (to.path === '/wallet') return true
 
-  // // 如果没有钱包，重定向到wallet
-  // if (!hasWallet) {
-  //   return { path: '/wallet' }
-  // }
+  // 如果没有钱包，重定向到wallet
+  if (!hasWallet) {
+    return { path: '/wallet' }
+  }
 
   return true
 })

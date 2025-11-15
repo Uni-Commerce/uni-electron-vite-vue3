@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url(variables.scss);
+@import url(fonts.scss);
+@import url(common.scss);
+@import url(iconfont.scss);
+@import url(element-plus.scss);

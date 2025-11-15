@@ -1,0 +1,88 @@
+.el-button {
+  & + .el-button {
+    margin-left: 0;
+  }
+
+  &.is-disabled {
+    opacity: 0.1;
+  }
+}
+
+.el-drawer {
+  --el-drawer-padding-primary: 0;
+}
+
+.el-radio {
+  height: unset;
+}
+
+.el-message-box__message {
+  p {
+    line-height: unset;
+  }
+}
+
+.el-message-box__container {
+  display: block;
+}
+
+.el-message-box__header {
+  display: none;
+}
+
+.el-form-item--label-top {
+  .el-form-item__label {
+    line-height: 20px;
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+}
+
+.el-form-item__error {
+  padding-top: 5px;
+}
+
+.el-input__inner {
+  -webkit-text-fill-color: var(--text-color-font);
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+
+  // 隐藏原生数字输入框的箭头
+  &[type='number'] {
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.el-popper {
+  border-width: 0 !important;
+  box-shadow: unset !important;
+}
+
+.el-dropdown-menu__item {
+  padding: 7px 12px;
+}
+
+.el-dropdown {
+  outline: unset;
+}
+
+.el-loading-text {
+  --el-color-primary: var(--text-color-white);
+}
+
+.el-loading-spinner {
+  .path {
+    stroke: var(--text-color-white);
+  }
+}
+
+.el-overlay {
+  --el-overlay-color-lighter: var(--bg-color-overlay);
+}
