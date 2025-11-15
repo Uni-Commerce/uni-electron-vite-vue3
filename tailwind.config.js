@@ -5,9 +5,10 @@ export default {
     extend: {
       backgroundColor: {
         primary: 'var(--bg-color-primary)',
-        dark: 'var(--bg-color-dark)',
+        block: 'var(--bg-color-block)',
         body: 'var(--bg-color-body)',
         page: 'var(--bg-color-page)',
+        screen: 'var(--bg-color-screen)',
         green: 'var(--bg-color-green)',
         gray: 'var(--bg-color-gray)',
         drawer: 'var(--bg-color-drawer)',
@@ -40,7 +41,8 @@ export default {
         close: 'var(--text-color-close)',
         cap: 'var(--text-color-cap)',
         toast: 'var(--text-color-toast)',
-        off: 'var(--text-color-off)'
+        off: 'var(--text-color-off)',
+        block: 'var(--text-color-block)'
       },
       fontFamily: {
         // SF Pro Display 字体系列 - Apple 设计语言字体

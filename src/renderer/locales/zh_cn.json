@@ -93,6 +93,8 @@
   "history.revoke": "撤销批准",
   "history.approve": "批准用于",
   "history.unknown": "未知",
+  "waller.message": "选择创建新钱包或恢复现有钱包",
+  "wallet.welcome": "欢迎使用熊猫钱包!",
   "wallet.appName": "熊猫钱包",
   "wallet.create": "创建钱包",
   "wallet.import": "导入钱包",

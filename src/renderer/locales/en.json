@@ -93,6 +93,8 @@
   "history.revoke": "Revoke Approval",
   "history.approve": "Approve for",
   "history.unknown": "Unknown",
+  "waller.message": "Select to create a new wallet or restore an existing wallet",
+  "wallet.welcome": "Welcome to Panda Mask!",
   "wallet.appName": "Panda Mask",
   "wallet.create": "Create Wallet",
   "wallet.import": "Import Wallet",

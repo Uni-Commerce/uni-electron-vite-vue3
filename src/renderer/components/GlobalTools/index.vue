@@ -87,7 +87,7 @@ const updateElementSize = () => {
 }
 
 const { x, y, isDragging } = useDraggable(target, {
-  initialValue: { x: 235, y: 10 },
+  initialValue: { x: 850, y: 20 },
   onMove({ x, y }) {
     if (!target.value) return { x, y }
 

@@ -1,8 +1,8 @@
 <template>
-  <div class="relative h-screen w-screen overflow-hidden bg-primary">
+  <div class="bg-screen relative h-[686px] max-h-[686px] w-[1024px] max-w-[1024px] overflow-hidden">
     <router-view />
+    <app-global-tools />
   </div>
-  <app-global-tools />
 </template>
 
 <script lang="ts" setup>

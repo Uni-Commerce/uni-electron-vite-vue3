@@ -45,10 +45,11 @@
 .light {
   // background-color
   --bg-color-primary: #fff;
-  --bg-color-black: #000;
+  --bg-color-block: #000;
   --bg-color-dark: #eee;
   --bg-color-body: #fff;
   --bg-color-page: #f2f2f2;
+  --bg-color-screen: #f2f2f2;
   --bg-color-green: #1bd872;
   --bg-color-gray: rgba(0, 0, 0, 0.05);
   --bg-color-drawer: #fff;
@@ -83,6 +84,7 @@
   --text-color-toast: #0075ff;
   --text-color-off: rgba(60, 60, 67, 0.6);
   --text-color-border: rgba(0, 0, 0, 0.8);
+  --text-color-block: rgba(255, 255, 255, 0.5);
   // font-size
   --font-size-mini: 0.625rem;
   --font-size-xs: 0.8125rem;
@@ -99,10 +101,11 @@
 .dark {
   // background-color
   --bg-color-primary: #000;
-  --bg-color-black: #fff;
+  --bg-color-block: #fff;
   --bg-color-dark: #141414;
   --bg-color-body: rgba(255, 255, 255, 0.1);
   --bg-color-page: #000;
+  --bg-color-screen: #1c1c1c;
   --bg-color-green: rgba(255, 255, 255, 0.1);
   --bg-color-gray: rgba(255, 255, 255, 0.1);
   --bg-color-drawer: #1f1f1f;
@@ -137,6 +140,7 @@
   --text-color-toast: #0689ff;
   --text-color-off: rgba(255, 255, 255, 0.5);
   --text-color-border: rgba(255, 255, 255, 0.8);
+  --text-color-block: rgba(0, 0, 0, 0.4);
   // font-size
   --font-size-mini: 0.625rem;
   --font-size-xs: 0.8125rem;
