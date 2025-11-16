@@ -1,38 +1,57 @@
 <template>
   <div class="grid h-full grid-cols-[155px_1fr] items-stretch justify-between">
-    <div class="bg-input px-2 pt-[67px]">
-      <div class="grid grid-flow-row gap-y-[10px]">
-        <div
-          class="grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
-        >
-          <app-wallet-icon />
-          <router-link to="/wallet">
-            <span class="text-sm text-font">{{ t('menu.wallet') }}</span>
-          </router-link>
+    <div class="bg-input p-2 pt-[67px]">
+      <div class="flex h-full flex-col justify-between">
+        <div class="grid grid-flow-row gap-y-[10px]">
+          <div
+            class="grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
+          >
+            <app-wallet-icon />
+            <router-link to="/wallet">
+              <span class="text-sm text-font">{{ t('menu.wallet') }}</span>
+            </router-link>
+          </div>
+          <div
+            class="grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
+          >
+            <app-wallet-icon />
+            <router-link to="/home">
+              <span class="text-sm text-font">{{ t('menu.dashboard') }}</span>
+            </router-link>
+          </div>
+          <div
+            class="grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
+          >
+            <app-swap-icon />
+            <router-link to="/swap">
+              <span class="text-sm text-font">{{ t('menu.swap') }}</span>
+            </router-link>
+          </div>
+          <div
+            class="grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
+          >
+            <app-history-icon />
+            <router-link to="/history">
+              <span class="text-sm text-font">{{ t('menu.history') }}</span>
+            </router-link>
+          </div>
         </div>
-        <div
-          class="grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
-        >
-          <app-wallet-icon />
-          <router-link to="/home">
-            <span class="text-sm text-font">{{ t('menu.dashboard') }}</span>
-          </router-link>
-        </div>
-        <div
-          class="grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
-        >
-          <app-swap-icon />
-          <router-link to="/swap">
-            <span class="text-sm text-font">{{ t('menu.swap') }}</span>
-          </router-link>
-        </div>
-        <div
-          class="grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
-        >
-          <app-history-icon />
-          <router-link to="/history">
-            <span class="text-sm text-font">{{ t('menu.history') }}</span>
-          </router-link>
+        <div class="grid grid-flow-row gap-y-[10px]">
+          <div
+            class="relative grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
+          >
+            <app-lock-icon />
+            <span class="text-sm text-font">{{ t('menu.lock') }}</span>
+            <el-switch v-model="locked" class="absolute right-0 z-10" />
+          </div>
+          <div
+            class="grid grid-flow-col items-center justify-start gap-x-[5px] rounded-[6px] p-[7px]"
+          >
+            <app-setting-icon />
+            <router-link to="/mine">
+              <span class="text-sm text-font">{{ t('menu.setting') }}</span>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -78,6 +97,7 @@ const { handleSetWallet } = userStore
 const { activeWallet } = storeToRefs(userStore)
 const { hasBackup } = storeToRefs(seedPhrase)
 const cachedViews = ref([])
+const locked = ref<boolean>(false)
 const walletData = ref<any>(
   hasBackup
     ? {
@@ -99,3 +119,25 @@ const handleToggleAccount = () => {
   })
 }
 </script>
+
+<style lang="scss" scoped>
+:deep(.el-switch__core) {
+  height: 15px;
+  min-width: 28px;
+}
+
+:deep(.el-switch__action) {
+  width: 13px;
+  height: 13px;
+}
+
+:deep(.el-switch) {
+  &.is-checked {
+    .el-switch__core {
+      .el-switch__action {
+        left: calc(100% - 13px);
+      }
+    }
+  }
+}
+</style>

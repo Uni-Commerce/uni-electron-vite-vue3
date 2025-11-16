@@ -13,6 +13,18 @@ const router = createRouter({
         {
           path: '/home',
           component: () => import('@/renderer/pages/home/index.vue')
+        },
+        {
+          path: '/history',
+          component: () => import('@/renderer/pages/history/index.vue')
+        },
+        {
+          path: '/swap',
+          component: () => import('@/renderer/pages/swap/index.vue')
+        },
+        {
+          path: '/mine',
+          component: () => import('@/renderer/pages/mine/index.vue')
         }
       ]
     },

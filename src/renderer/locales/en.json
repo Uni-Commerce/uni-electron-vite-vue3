@@ -98,6 +98,8 @@
   "menu.dashboard": "Dashboard",
   "menu.swap": "Swap",
   "menu.history": "History",
+  "menu.lock": "Lock",
+  "menu.setting": "Setting",
   "waller.message": "Select to create a new wallet or restore an existing wallet",
   "wallet.welcome": "Welcome to Panda Mask!",
   "wallet.appName": "Panda Mask",

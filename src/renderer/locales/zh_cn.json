@@ -98,6 +98,8 @@
   "menu.dashboard": "首页",
   "menu.swap": "交易",
   "menu.history": "历史",
+  "menu.lock": "锁定",
+  "menu.setting": "设置",
   "waller.message": "选择创建新钱包或恢复现有钱包",
   "wallet.welcome": "欢迎使用熊猫钱包!",
   "wallet.appName": "熊猫钱包",

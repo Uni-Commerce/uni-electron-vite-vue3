@@ -1,6 +1,9 @@
 <template>
   <div class="mx-auto mt-[52px] w-[700px]">
-    <div class="grid grid-flow-col items-center justify-center gap-x-[15px]">
+    <div
+      class="grid cursor-pointer grid-flow-col items-center justify-center gap-x-[15px]"
+      @click="handleToHome"
+    >
       <div class="h-8 w-8 rounded">
         <img src="@/renderer/assets/images/logo.png" :alt="t('wallet.appName')" />
       </div>
@@ -46,6 +49,10 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const router = useRouter()
+
+const handleToHome = () => {
+  router.push('/')
+}
 
 const handleToCreate = () => {
   router.push('/wallet/create')
