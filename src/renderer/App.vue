@@ -1,5 +1,13 @@
 <template>
-  <div class="relative h-[686px] max-h-[686px] w-[1024px] max-w-[1024px] overflow-hidden bg-screen">
+  <div
+    class="relative overflow-hidden bg-screen"
+    :style="{
+      height: `${container.height - scrollbar}px`,
+      maxHeight: `${container.height - scrollbar}px`,
+      width: `${container.width}px`,
+      maxWidth: `${container.width}px`
+    }"
+  >
     <router-view />
     <app-global-tools />
   </div>
@@ -19,6 +27,11 @@ const isDark = useDark({
 })
 const { theme } = storeToRefs(appStore)
 const toggleTheme = useToggle(isDark)
+const container = reactive({
+  width: 1024,
+  height: 686
+})
+const scrollbar = ref<number>(26)
 
 onBeforeMount(() => {
   appStore.setTheme(isDark.value ? 'dark' : 'light')
