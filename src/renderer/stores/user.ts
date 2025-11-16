@@ -11,7 +11,14 @@ export const useUserStore = defineStore('user', () => {
       address: string
       isActive: boolean
     }>
-  >([])
+  >([
+    {
+      name: 'HALISI - Q01',
+      password: '12345Abc',
+      address: '0xf55369dac5bc98329aa4caafbf746c933733b90a',
+      isActive: true
+    }
+  ])
 
   const activeWallet = computed(() => {
     return walletList.value.find((item) => item.isActive)
