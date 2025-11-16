@@ -1,3 +1,3 @@
 <template>
-  <div>Mine</div>
+  <div>Address</div>
 </template>

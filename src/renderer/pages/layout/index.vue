@@ -55,33 +55,33 @@
         </div>
       </div>
     </div>
-    <div>
-      <div>
-        <div class="px-4 pb-[28px]">
-          <div
-            class="grid cursor-pointer grid-flow-col items-center justify-start"
-            @click="handleToggleAccount"
-          >
-            <img src="@/renderer/assets/images/avatar.png" class="h-6 w-6 rounded" />
-            <div>
-              <p>
-                <span class="ml-[10px] font-SFPro-Medium text-base leading-[22px] text-primary">
-                  {{ activeWallet?.name }}
-                </span>
-                <i class="iconfont icon_arrow_drop_down ml-[5px] text-[20px]" />
-              </p>
-              <p class="mb-[5px] font-DIN-Bold text-[28px] font-bold text-primary">
-                {{ `$${String(walletData.balance).padEnd(4, '.00')}` }}
-              </p>
-            </div>
+    <div class="flex flex-col">
+      <div class="bg-primary px-4">
+        <div
+          class="grid cursor-pointer grid-flow-col items-center justify-start"
+          @click="handleToggleAccount"
+        >
+          <img src="@/renderer/assets/images/avatar.png" class="h-6 w-6 rounded" />
+          <div class="ml-[10px]">
+            <p>
+              <span class="font-SFPro-Medium text-base leading-[22px] text-primary">
+                {{ activeWallet?.name }}
+              </span>
+              <i class="iconfont icon_arrow_drop_down ml-[5px] text-[20px]" />
+            </p>
+            <p class="font-DIN-Bold text-[10px] text-small">
+              {{ `$${String(walletData.balance).padEnd(4, '.00')}` }}
+            </p>
           </div>
         </div>
       </div>
-      <router-view v-slot="{ Component, route: routeInfo }">
-        <keep-alive :include="cachedViews">
-          <component :is="Component" :key="routeInfo.path" v-bind="$route.query" />
-        </keep-alive>
-      </router-view>
+      <div class="flex-1">
+        <router-view v-slot="{ Component, route: routeInfo }">
+          <keep-alive :include="cachedViews">
+            <component :is="Component" :key="routeInfo.path" v-bind="$route.query" />
+          </keep-alive>
+        </router-view>
+      </div>
     </div>
   </div>
 </template>

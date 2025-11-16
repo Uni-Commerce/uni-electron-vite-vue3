@@ -24,7 +24,46 @@ const router = createRouter({
         },
         {
           path: '/mine',
-          component: () => import('@/renderer/pages/mine/index.vue')
+          component: () => import('@/renderer/pages/mine/layout.vue'),
+          redirect: '/mine/management',
+          children: [
+            {
+              path: '/mine/management',
+              component: () => import('@/renderer/pages/mine/management.vue')
+            },
+            {
+              path: '/mine/backup',
+              component: () => import('@/renderer/pages/mine/backup.vue')
+            },
+            {
+              path: '/mine/setting',
+              component: () => import('@/renderer/pages/mine/setting.vue')
+            },
+            {
+              path: '/mine/network',
+              component: () => import('@/renderer/pages/mine/network.vue')
+            },
+            {
+              path: '/mine/crypto',
+              component: () => import('@/renderer/pages/mine/crypto.vue')
+            },
+            {
+              path: '/mine/address',
+              component: () => import('@/renderer/pages/mine/address.vue')
+            },
+            {
+              path: '/mine/general',
+              component: () => import('@/renderer/pages/mine/general.vue')
+            },
+            {
+              path: '/mine/agreement',
+              component: () => import('@/renderer/pages/mine/agreement.vue')
+            },
+            {
+              path: '/mine/about-us',
+              component: () => import('@/renderer/pages/mine/about.vue')
+            }
+          ]
         }
       ]
     },
@@ -47,6 +86,11 @@ const router = createRouter({
           component: () => import('@/renderer/pages/wallet/import.vue')
         }
       ]
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('@/renderer/pages/404/index.vue')
     }
   ]
 })
